@@ -42,6 +42,8 @@ public class Barco {
             }
         }
     }
+
+
     public String desapila(int columna) {
         int aux=0;
         String resultado = "";
@@ -60,6 +62,25 @@ public class Barco {
         }
         return resultado;
     }
+
+
+    public String desapilaPorId (int id){
+
+        for (int i = 0; i < FILAS; i++) {
+            for (int j = 0; j < COLUMNAS; j++) {
+                if (contenedor[i][j] != null){
+                    if (contenedor [i][j].getIdentificador() == id){
+                        this.contenedor[i][j]= null;
+                        return "El contenedor ha sido desapilado con exito";
+                    }
+                }
+            }
+        }
+        return "Ningun contenedor tiene ese id";
+    }
+
+
+
     public String MostrarDatos(int identificador){
         String mostrar= "";
         int f, c;
@@ -91,6 +112,8 @@ public class Barco {
         else return mostrar;
     }
 
+
+    //Método que no necesitaremos para la interfaz
     public Contenedor crearContenedor()
     {
         int id;

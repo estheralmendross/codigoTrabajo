@@ -35,4 +35,8 @@ public class Puerto {
     public void setIndice(int indice) {
         this.indice = indice;
     }
+
+    public String desapilaPorId (int id, int puerto){
+        return this.puerto[puerto].desapilaPorId(id);
+    }
 }
